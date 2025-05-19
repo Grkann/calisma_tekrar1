@@ -1,0 +1,8 @@
+Maven Nedir?
+pom.xml nedir?
+JDK Nedir?
+JRE Nedir?
+Compiler Nedir?
+Interpreter nedir?
+Java nedir?
+Java özellikleri nelerdir?

@@ -1,8 +1,9 @@
 # Gürkan Özdemir
-[GitHub](https://github.com/Grkann/calisma_tekrar1.git 
+[GitHub](https://github.com/Grkann/calisma_tekrar1.git)
 [JDK](https://www.oracle.com/java/technologies/downloads/#jdk24-windows)
 [Intellij Idea Community](https://www.jetbrains.com/idea/download/?section=windows)
 [Git](https://git-scm.com/downloads/win)
+[Java Tutorials](https://www.w3schools.com/java/default.asp)
 
 # Git
 ```sh
