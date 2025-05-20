@@ -10,3 +10,7 @@ Java özellikleri nelerdir?
 Data types nedir?
 -Primitive types nedir?
 -Wrapper types nedir?
+
+camelCase yazım nedir?
+PascalCase yazım nedir?
+kebab-case yazım nedir?
