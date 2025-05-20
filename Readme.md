@@ -14,6 +14,25 @@ git push -u origin master
 
 git clone https://github.com/Grkann/calisma_tekrar1.git
 ```
+
+---
+## Java Common Rules
+```sh
+Class isimleri PascalCase e göre yazılır.
+Class isimlerini fiil olarak kullanmayız.
+Class : Javada 1 tane public class vardır.(inner class haric.)
+Class : Javada static class yoktur.(inner class haric.)
+
+Paket isimleri: Küçük harflerle yazılır.
+Paket isimleri: Fii olarak kullanmayız.
+Paket ismi kısa net bir şekilde olmalıdır.
+```
+---
+
+
+
+
+
 ```sh
 Java Core
 ```
