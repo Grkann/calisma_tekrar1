@@ -6,5 +6,5 @@ public class _01_JavaTypes {
         //sout=> tab
         System.out.println("Hello World");
     } //end psvm
-} // end class
+} // end class.
 
