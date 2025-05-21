@@ -34,7 +34,10 @@ Paket ismi kısa net bir şekilde olmalıdır.
 
 
 ```sh
-Java Core
+Java Core Information
+
+Java case sensitive bir dildir.(Küçük büyük harfe duyarlı yüksek seviye bir dildir.)
+
 ```
 ```sh
 Java Core
