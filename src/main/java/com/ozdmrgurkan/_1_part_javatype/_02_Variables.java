@@ -17,5 +17,11 @@ public class _02_Variables {
         _schoolNumber = 44;
         System.out.println(_schoolNumber);
 
+        //Sabit (final)
+
+        final int MAX_STUDENTS=100;
+        System.out.println(MAX_STUDENTS);
+
+
     }
 }

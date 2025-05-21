@@ -19,6 +19,7 @@ public class _03_JavaPrimitiveTypes {
         //virgüllü sayılar (floating point)
         float f2=3.14f;
         System.out.println("float:" + f2);
+       // float totalSalary= 12412.1f; Anlamlı isimlendirmeler yapmalıyız.
 
         double d2=3.14;
         System.out.println("double:" + d2);

@@ -1,0 +1,5 @@
+Single Comment ==> Ctrl+/
+Multiple Comment ==> Shift+Ctrl+/
+Beautify : Ctrl + Alt + L
+Copy and pase ; Ctrl + D
+Hepsini değiştir : Shift + F6
