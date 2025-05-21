@@ -1,6 +1,6 @@
 package com.ozdmrgurkan._1_part_javatype;
 
-public class _02_JavaPrimitiveTypes {
+public class _03_JavaPrimitiveTypes {
     public static void main(String[] args) {
 // Primitive types : 8 tanedir , null değer alamazsınız.
         // tam sayılar (4)
@@ -28,7 +28,7 @@ public class _02_JavaPrimitiveTypes {
         System.out.println("boolean:" + b3);
 
         //char
-        char c1='a';
+        char c1='\u4125';
         System.out.println("char:" + c1);
     }
 }
