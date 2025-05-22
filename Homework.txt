@@ -14,3 +14,6 @@ Data types nedir?
 camelCase yazım nedir?
 PascalCase yazım nedir?
 kebab-case yazım nedir?
+
+Stack Memory - Heap Memory
+Escape Charecter nedir?

@@ -1,6 +1,6 @@
 package com.ozdmrgurkan._1_part_javatype;
 
-public class _04_operators
+public class _05_operators
 {
     public static void main(String[] args) {
         //Operators
@@ -20,6 +20,15 @@ public class _04_operators
         System.out.println("Bölme: " + division);
         System.out.println("Kalan: " + modulus);
 
+        // (post-increment): Önce değişken kullanılır, sonra 1 artırılır.
+        int numberx=10;
+        numberx++;
+        System.out.println(numberx);
+
+        // (pre-increment): Önce 1 artırılır, sonra değişken kullanılır.
+        int numbery=10;
+        ++numbery;
+        System.out.println(numbery);
 
         //Mantıksal Operators : &&=VE   ||=VEYA   !=DEĞİL
 
