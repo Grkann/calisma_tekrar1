@@ -208,10 +208,6 @@ Java Core (Common Rules)
 ```
 
 
-```sh
-Java Core (Primitive Types)
-```
-
 
 ```sh
 Java Core(Data Types)
