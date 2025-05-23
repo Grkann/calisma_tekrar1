@@ -1,4 +1,8 @@
 package com.ozdmrgurkan._1_part_javatype;
 
-public class _07_EscapeCharacter {
+public class _07_EscapeCharacter
+{
+    public static void main(String[] args) {
+
+    }
 }
