@@ -1,4 +1,4 @@
-package com.ozdmrgurkan._1_part_javatype;
+package com.ozdmrgurkan._1_week;
 
 public class _04_1_JavaWrapperType {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class _04_1_JavaWrapperType {
         char primitiveTypeChar = 'A';
 
 
-        //WRAPPER TYPE
+        //WRAPPER TYPE (new yoksa)
 
         Byte wrapperTypeByte = 127;
         wrapperTypeByte=null; // wrapper classa null verebiliriz.

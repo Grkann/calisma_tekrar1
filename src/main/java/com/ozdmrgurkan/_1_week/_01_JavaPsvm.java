@@ -1,4 +1,4 @@
-package com.ozdmrgurkan._1_part_javatype;
+package com.ozdmrgurkan._1_week;
 
 public class _01_JavaPsvm {
     //psvm=> tab
