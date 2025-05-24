@@ -3,3 +3,5 @@ Multiple Comment ==> Shift+Ctrl+/
 Beautify : Ctrl + Alt + L
 Copy and pase ; Ctrl + D
 Hepsini değiştir : Shift + F6
+Satırı yukarı taşı: Shift + Alt + ↑
+Satırı aşağı taşı: Shift + Alt + ↓
