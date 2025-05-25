@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class _09_5_Conditional_SwitchCase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
         System.out.println("Lütfen bir sayı giriniz:");
+        int number = scanner.nextInt();
 
         //Switch-Case
         switch (number){
