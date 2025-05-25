@@ -21,7 +21,7 @@
 ---
 
 ## 2.Ders ödevi
-Stack Memory - Heap Memory
+> Stack Memory - Heap Memory
 Escape Charecter nedir?
 ---
 
@@ -37,3 +37,7 @@ System.out.println("Bildiğiniz Diller & Teknolojiler");
 language=klavye.nextInt();
 
 null değerini ne zaman kullanabilirim?
+
+## 4.Ders ödevi
+>switch-case ile if-else arasındaki farklar nelerdir?
+>for ile while arasındaki fark nedir?
