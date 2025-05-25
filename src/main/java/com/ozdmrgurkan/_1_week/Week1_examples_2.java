@@ -2,7 +2,7 @@ package com.ozdmrgurkan._1_week;
 
 import java.util.Scanner;
 
-public class Wek1_examples_2 {
+public class Week1_examples_2 {
     public static void main(String[] args) {
        /* 2. Santigrat(Celcius) - Fahreneit Dönüştürücü
         Soru:

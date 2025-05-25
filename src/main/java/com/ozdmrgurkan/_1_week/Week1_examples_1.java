@@ -2,7 +2,7 @@ package com.ozdmrgurkan._1_week;
 
 import java.util.Scanner;
 
-public class Week_1_examples_1 {
+public class Week1_examples_1 {
     public static void main(String[] args) {
     /*    1. 1.Dereceden 1 Bilinmeyenli Denklemi Çözme
         Soru:
