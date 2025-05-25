@@ -19,7 +19,7 @@ public class Week2_examples_2 {
             System.out.println("0 değeri ne pozitif ne negatitiftir.");
         }
 
-
+scanner.close();
 
     }
 }

@@ -16,7 +16,8 @@ public class Week2_examples_1 {
             System.out.println("Girdiğiniz " + sayi + " değeri tek sayıdır.");
         }
         else {
-            System.out.println("Negatif bir değer girdiniz!");
+            System.out.println("Negatif bir değer girdiniz. \n Geçersiz işlem!");
         }
+
     }
 }
