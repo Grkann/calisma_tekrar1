@@ -10,6 +10,7 @@ public class _12_1_String1 {
         // String vocabulary = new String(" Java ÖğreniYORum ")
 
 
+        //String Pool Bellek Yönetimi
         String vocabulary = " Java ÖğreniYORum ";
         String vocabulary2 = " Java ÖğreniYORum ";
 
@@ -58,6 +59,43 @@ public class _12_1_String1 {
         } else {
             System.out.println("Verdiğiniz kelimenin en fazla " + vocabulary.length() + " karakteri vardır.");
         }
+
+
+        //Contains
+        System.out.println("Geçiyor mu ? : " + vocabulary.contains("Java"));
+
+        //Split
+
+        //Replace
+        System.out.println("Değiştir :" + vocabulary.replace("Java","Java 2025"));
+
+        //Birleştirme (concat)
+        System.out.println(vocabulary.concat(" jps").concat(" jpf"));
+
+        // Birleştirme (StringBuilder) --API
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(vocabulary).append(" jps").append(" jsf");
+        String dataToString = stringBuilder.toString();
+        System.out.println(dataToString);
+
+        // Birleştirme (StringBuffer) --Data Security
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(" jps").append(" jsf");
+        String dataToString2 = stringBuffer.toString();
+        System.out.println(dataToString2);
+
+        //Hash code
+        System.out.println(vocabulary.hashCode());
+        System.out.println(vocabulary2.hashCode());
+        System.out.println(vocabulary3.hashCode());
+
+
+
+
+
+
+
+
 
 
     }

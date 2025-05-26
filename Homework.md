@@ -45,3 +45,9 @@ null değerini ne zaman kullanabilirim?
 > Static yapı nedir?
 > Overloading nedir ?
 > Override nedir ?
+> 
+> 
+> 
+> ## 5.Ders ödevi
+> 
+> 
