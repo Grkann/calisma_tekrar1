@@ -41,3 +41,7 @@ null değerini ne zaman kullanabilirim?
 ## 4.Ders ödevi
 >switch-case ile if-else arasındaki farklar nelerdir?
 >for ile while arasındaki fark nedir?
+> String birleştirme (concatenation) türleri , Concat , StringBuilder ,StringBuffer 
+> Static yapı nedir?
+> Overloading nedir ?
+> Override nedir ?
