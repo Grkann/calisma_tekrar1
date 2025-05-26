@@ -6,7 +6,7 @@ public class _13_1_MethodIsNotReturn {
         System.out.println("Metot Parametresiz Returnsuz");
     }
 
-    //Metot Overloading
+    //Method Overloading
 
     // 2-Parametreli
     public static void methodnotReturnIsParamether(String name) {

@@ -7,8 +7,10 @@ public class _13_2_MethodIsReturn {
         return "Method is not Parameter.";
 
     }
-    public Integer methodIsReturnIsParamether(int sayi){
-        return sayi;
+    public Integer methodIsReturnIsParamether(int sayi1){
+        return sayi1;
+
+
     }
 
     public static void main(String[] args) {
