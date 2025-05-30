@@ -8,7 +8,7 @@ public class _13_2_MethodIsReturn {
 
     }
     public Integer methodIsReturnIsParamether(int sayi1){
-        return sayi1;
+        return sayi1    ;
 
 
     }
