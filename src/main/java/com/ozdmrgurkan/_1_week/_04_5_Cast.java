@@ -19,12 +19,24 @@ public class _04_5_Cast {
         System.out.println(ascii1);
 
         int ascii3=33;
-        char cast5Char= (char) ascii3;
-        System.out.println(cast5Char);
+        char cast4Char= (char) ascii3;
+        System.out.println(cast4Char);
 
+       // 4) String to Int
 
+        String castString5 = "10";
+        int cast4Int= Integer.valueOf(castString5);
+        int cast4Int2= Integer.parseInt(castString5);
+        System.out.println(castString5+20);
+        System.out.println(cast4Int+20);
+        System.out.println(cast4Int2+20);
 
-
+        // 5)  Int => String
+        int cast5Int=55;
+        String cast5String1= String.valueOf(cast5Int);
+        String cast5String2= Integer.toString(cast5Int);
+        System.out.println(cast5String1);
+        System.out.println(cast5String2);
 
 
     }
