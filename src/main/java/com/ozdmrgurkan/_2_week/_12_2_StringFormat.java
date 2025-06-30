@@ -8,6 +8,7 @@ public class _12_2_StringFormat {
         Formatter formatter= new Formatter();
         formatter.format(" Merhabalar,Adınız : %s , Numaranız : %d, Bütçe: %f ","Gürkan",152,44.2);
         System.out.println(formatter);
+        formatter.close(); //Belleği serbest bırakma
     }
 
     public static void main(String[] args) {
