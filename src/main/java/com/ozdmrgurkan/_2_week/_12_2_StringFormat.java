@@ -6,12 +6,19 @@ public class _12_2_StringFormat {
 
     public static void formatter1(){
         Formatter formatter= new Formatter();
-        formatter.format(" Merhabalar,Adınız : %s , Numaranız : %d, Bütçe: %f ","Gürkan",152,44.2);
+        formatter.format("Merhabalar,Adınız : %s , Numaranız : %d, Bütçe: %f ","Gürkan",152,44.2);
         System.out.println(formatter);
         formatter.close(); //Belleği serbest bırakma
     }
 
+    public static void formatter2(){
+       String formatterString= String.format("Merhabalar Adınız : %s, T.C : %d, Fiyat: %f", "Gürkan",152, 44.2);
+        System.out.println(formatterString);
+    }
+
     public static void main(String[] args) {
-formatter1();
+
+        formatter1();
+        formatter2();
     }
 }
