@@ -75,6 +75,33 @@ public class _16_1_Array {
 
     }
 
+    public static void arrayMethod7() {
+        String[] originalCity = arrayMethod2();
+
+        //Clone
+        String[] cloneCity = Arrays.copyOf(originalCity, originalCity.length);
+
+        Arrays.sort(cloneCity);
+
+        // Dizilerde sıralama (Büyükten kücüge dogru sıralama)
+        // Arrays.sort(originalCity, Collections.reverseOrder());
+
+        for (String temp : cloneCity) {
+            System.out.println(_15_4_SpecialColor.RESET + temp + _15_4_SpecialColor.RESET);
+        }
+        //Binary Search
+        String searchCity = _15_4_SpecialColor.YELLOW+"z";
+        int index = Arrays.binarySearch(cloneCity, searchCity);
+
+        if (index >=0){
+            System.out.println(searchCity+_15_4_SpecialColor.BLUE + "harfi bulunmaktadır." + _15_4_SpecialColor.RESET);
+        }
+        else {
+            System.out.println(searchCity+_15_4_SpecialColor.RED+ " harfi yoktur."+ _15_4_SpecialColor.RESET);
+        }
+
+    }
+
     public static int randomNumber() {
         Random random = new Random();
         int rndInt = random.nextInt(10); // 1<=Number<=10
@@ -83,7 +110,7 @@ public class _16_1_Array {
 
 
     //fill metodu tek bir değeri dizinin tüm elemanlarına atamak için tasarlanmıştır.
-    public static void arrayMethod7() {
+    public static void arrayMethod8() {
         int[] number = new int[5];
         Arrays.fill(number, randomNumber());
         //İteratif for
@@ -104,8 +131,9 @@ public class _16_1_Array {
         // arrayMethod2();
         // arrayMethod3();
         // arrayMethod4();
-        //  arrayMethod5();
+        // arrayMethod5();
         // arrayMethod6();
         arrayMethod7();
+        // arrayMethod8();
     }
 }
