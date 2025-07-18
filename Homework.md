@@ -51,4 +51,7 @@ null değerini ne zaman kullanabilirim?
 > ## 5.Ders ödevi
 >  int cast4Int= Integer.valueOf(castString5);
 >  int cast4Int2= Integer.parseInt(castString5); arasındaki farklar nedir ?
+>
 > 
+> > ## 6.Ders ödevi
+> Array => foreach ile iterative for döngüsü arasındaki farklar nelerdir ?

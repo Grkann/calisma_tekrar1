@@ -1,9 +1,13 @@
 package com.ozdmrgurkan._2_week;
 
+
+import java.util.Arrays;
+
 public class _16_1_Array {
     public static String[] arrayMethod1() throws ArrayIndexOutOfBoundsException {
         //String dizisi
-        String[] city = {"g", "u", "r", "k", null, "n"};  // Eleman sayısı : 6
+       // String[] city = {"g", "u", "r", "k", null, "n"};  // Eleman sayısı : 6
+        String[] city = {"g", "u", "r", "k", "a", "n"};
 
         System.out.println(city[2]);
         System.out.println("Eleman sayısı: " + city.length);
@@ -20,28 +24,53 @@ public class _16_1_Array {
         city[1] = "u";
         city[2] = "r";
         city[3] = "k";
+        city[4] = "a";
         city[5] = "n";
         // System.out.println(city);
         // System.out.println(city[3]);
         // System.out.println("Eleman sayısı: " + city.length);
-        System.out.println("Son eleman:" + city[city.length - 1]);
         return city;
 
     }
 
     public static void arrayMethod3() {
         String[] city = arrayMethod2();
-
-        //for each
+        // for each
         for (String temp : city) {
             System.out.println(_15_4_SpecialColor.YELLOW + temp + _15_4_SpecialColor.RESET);
         }
 
     }
 
-    public static void main(String[] args){
-    // arrayMethod1();
-    // arrayMethod2();
-    arrayMethod3();
+    // İteratif for döngüsü
+    public static void arrayMethod4() {
+        String[] city = arrayMethod2();
+
+        for (int i = 0; i < city.length; i++) {
+            System.out.println(_15_4_SpecialColor.BLUE + city[i] + _15_4_SpecialColor.RESET);
+        }
+    }
+
+    public static void arrayMethod5() {
+        String[] city = arrayMethod2();
+        //Dizilerde sıralama (Kücükten büyüge dogru sıralama)
+
+        Arrays.sort(city);
+
+        for (String temp: city) {
+            System.out.println(_15_4_SpecialColor.RESET + temp+ _15_4_SpecialColor.RESET);
+        }
+
+
+    }
+
+
+
+    public static void main(String[] args) {
+        // arrayMethod1();
+        //arrayMethod2();
+       // arrayMethod3();
+       // arrayMethod4();
+        arrayMethod5();
     }
 }
