@@ -7,7 +7,7 @@ import java.util.Random;
 public class _16_1_Array {
     public static String[] arrayMethod1() throws ArrayIndexOutOfBoundsException {
         //String dizisi
-       // String[] city = {"g", "u", "r", "k", null, "n"};  // Eleman sayısı : 6
+        // String[] city = {"g", "u", "r", "k", null, "n"};  // Eleman sayısı : 6
         String[] city = {"g", "u", "r", "k", "a", "n"};
 
         System.out.println(city[2]);
@@ -57,36 +57,45 @@ public class _16_1_Array {
         // Dizilerde sıralama (Kücükten büyüge dogru sıralama)
         Arrays.sort(city);
 
-        for (String temp: city) {
-            System.out.println(_15_4_SpecialColor.RESET + temp+ _15_4_SpecialColor.RESET);
+        for (String temp : city) {
+            System.out.println(_15_4_SpecialColor.RESET + temp + _15_4_SpecialColor.RESET);
         }
 
 
     }
-    public static void arrayMethod6(){
+
+    public static void arrayMethod6() {
         String[] city = arrayMethod2();
         // Dizilerde sıralama (Büyükten kücüge dogru sıralama)
         Arrays.sort(city, Collections.reverseOrder());
 
-        for (String temp: city) {
-            System.out.println(_15_4_SpecialColor.RESET + temp+ _15_4_SpecialColor.RESET);
+        for (String temp : city) {
+            System.out.println(_15_4_SpecialColor.RESET + temp + _15_4_SpecialColor.RESET);
         }
 
     }
 
-    public static int randomNumber(){
+    public static int randomNumber() {
         Random random = new Random();
-        int rndInt = random.nextInt(1000);
+        int rndInt = random.nextInt(10); // 1<=Number<=10
         return rndInt;
     }
 
 
-    //fill
+    //fill metodu tek bir değeri dizinin tüm elemanlarına atamak için tasarlanmıştır.
     public static void arrayMethod7() {
-        int [] number = new int[5];
-        Arrays.fill(number,randomNumber()); // 13 sayısı ile doldur
-        for (int temp: number) {
-            System.out.println(_15_4_SpecialColor.RESET + temp+ _15_4_SpecialColor.RESET);
+        int[] number = new int[5];
+        Arrays.fill(number, randomNumber());
+        //İteratif for
+        for (int i = 0; i < number.length; i++) {
+            number[i] = randomNumber();
+            // System.out.println(number[i]);
+            Arrays.setAll(number, data -> randomNumber());
+
+        }
+//for each
+        for (int temp : number) {
+            System.out.println(_15_4_SpecialColor.RESET + temp + _15_4_SpecialColor.RESET);
         }
     }
 
