@@ -1,7 +1,8 @@
 package com.ozdmrgurkan._2_week;
 
-
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 
 public class _16_1_Array {
     public static String[] arrayMethod1() throws ArrayIndexOutOfBoundsException {
@@ -53,8 +54,7 @@ public class _16_1_Array {
 
     public static void arrayMethod5() {
         String[] city = arrayMethod2();
-        //Dizilerde sıralama (Kücükten büyüge dogru sıralama)
-
+        // Dizilerde sıralama (Kücükten büyüge dogru sıralama)
         Arrays.sort(city);
 
         for (String temp: city) {
@@ -63,14 +63,40 @@ public class _16_1_Array {
 
 
     }
+    public static void arrayMethod6(){
+        String[] city = arrayMethod2();
+        // Dizilerde sıralama (Büyükten kücüge dogru sıralama)
+        Arrays.sort(city, Collections.reverseOrder());
+
+        for (String temp: city) {
+            System.out.println(_15_4_SpecialColor.RESET + temp+ _15_4_SpecialColor.RESET);
+        }
+
+    }
+
+    public static int randomNumber(){
+        Random random = new Random();
+        int rndInt = random.nextInt(1000);
+        return rndInt;
+    }
 
 
+    //fill
+    public static void arrayMethod7() {
+        int [] number = new int[5];
+        Arrays.fill(number,randomNumber()); // 13 sayısı ile doldur
+        for (int temp: number) {
+            System.out.println(_15_4_SpecialColor.RESET + temp+ _15_4_SpecialColor.RESET);
+        }
+    }
 
     public static void main(String[] args) {
         // arrayMethod1();
-        //arrayMethod2();
-       // arrayMethod3();
-       // arrayMethod4();
-        arrayMethod5();
+        // arrayMethod2();
+        // arrayMethod3();
+        // arrayMethod4();
+        //  arrayMethod5();
+        // arrayMethod6();
+        arrayMethod7();
     }
 }
