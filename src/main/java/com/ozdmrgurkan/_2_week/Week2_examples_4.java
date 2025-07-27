@@ -3,7 +3,10 @@ package com.ozdmrgurkan._2_week;
 import java.util.Scanner;
 
 public class Week2_examples_4 {
-    public static void main(String[] args) {
+
+    //Iterative method
+    public static void iteretiveFactoriyel() {
+
         // Iterative
         // Veriables
 
@@ -18,7 +21,6 @@ public class Week2_examples_4 {
             if (doubleRemainingRight > 0) {
                 System.out.println(_15_4_SpecialColor.BLUE + " Faktöriyelini bulmak istediginiz sayıyı giriniz:");
 
-
                 //Kullanıcıdan ondalıklı sayı girip girmedigini kontrol edelim.
 
                 if (veriGirisi.hasNextInt()) {
@@ -27,7 +29,7 @@ public class Week2_examples_4 {
                     if (sayi < 0) {
                         System.out.println(_15_4_SpecialColor.RED + " Negatif değer girdiniz! Sistem kapatılıyor." + _15_4_SpecialColor.RESET);
                         // sayi = Math.abs(sayi);
-                         break; // 1.YOL (Yalnızca bulundugu döngü veya switch blogunu etkiliyor.)
+                        break; // 1.YOL (Yalnızca bulundugu döngü veya switch blogunu etkiliyor.)
                         // System.exit();  2.YOL ( JVM yi kapatarak programı tamamen sonlandırıyor.
 
                     } else if (sayi == 0) {
@@ -41,12 +43,11 @@ public class Week2_examples_4 {
 
                         }
                         System.out.println(_15_4_SpecialColor.BLUE + sayi + _15_4_SpecialColor.BLUE + " sayısının faktöriyeli = " + fakt);
-
                     }
-
                 } else if (veriGirisi.hasNextDouble()) {
-                    System.out.println(_15_4_SpecialColor.RED + " Ondalıklı bir sayı girdiniz. Kalan hakkınız :" + doubleRemainingRight + _15_4_SpecialColor.RESET);
                     doubleRemainingRight--;
+                    System.out.println(_15_4_SpecialColor.RED + " Ondalıklı bir sayı girdiniz. Kalan hakkınız :" + doubleRemainingRight + _15_4_SpecialColor.RESET);
+
                     if (doubleRemainingRight == 0) {
                         System.out.println(_15_4_SpecialColor.RED + " Üç defa ondalıklı değer girdiğiniz için program sonlandı." + _15_4_SpecialColor.RESET);
                         isActive = false;
@@ -58,7 +59,6 @@ public class Week2_examples_4 {
                     // break;
                     veriGirisi.next(); // Döngünün sonsuza kadar gitmesini engelliyor tekrar veri istiyor.
                 }
-
             } else {
                 System.out.println("Ondalıklı sayı giriş hakkınız kalmadı. Program sonlandırılıyor. (JVM tarafından.)");
                 System.exit(0);
@@ -67,6 +67,32 @@ public class Week2_examples_4 {
 
         }
         veriGirisi.close();
+    }
+
+    public static void recursiveFactoriyel() {
+
+    }
+
+    //PSVM
+    public static void main(String[] args) {
+        System.out.println("Lütfen seçim yapınız \n 1-Iterative Factoriyel \n 2-Recursive Factoriyel \n 3-Çıkış");
+
+        Scanner veriGirisi = new Scanner(System.in);
+
+        int chooise = veriGirisi.nextInt();
+
+        switch (chooise) {
+            case 1:
+                iteretiveFactoriyel();
+                break;
+            case 2:
+                recursiveFactoriyel();
+                break;
+            default:
+                System.out.println("Doğru seçin yapınız!");
+                break;
+        }
+
     }
 
 }
