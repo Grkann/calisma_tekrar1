@@ -22,18 +22,14 @@ public class Week2_examples_4 {
                 //Kullanıcıdan ondalıklı sayı girip girmedigini kontrol edelim.
 
                 if (veriGirisi.hasNextInt()) {
+
                     sayi = veriGirisi.nextInt();
                     if (sayi < 0) {
-                        System.out.println(_15_4_SpecialColor.RED + " Negatif değer girdiniz!" + _15_4_SpecialColor.RESET);
+                        System.out.println(_15_4_SpecialColor.RED + " Negatif değer girdiniz! Sistem kapatılıyor." + _15_4_SpecialColor.RESET);
                         // sayi = Math.abs(sayi);
-                        // break; // 1.YOL (Yalnızca bulundugu döngü veya switch blogunu etkiliyor.)
+                         break; // 1.YOL (Yalnızca bulundugu döngü veya switch blogunu etkiliyor.)
                         // System.exit();  2.YOL ( JVM yi kapatarak programı tamamen sonlandırıyor.
-                        doubleRemainingRight--;
-                        System.out.println(_15_4_SpecialColor.RED + " Kalan giriş hakkınız :" + doubleRemainingRight + _15_4_SpecialColor.RESET);
-                        if (doubleRemainingRight == 0) {
-                            System.out.println(_15_4_SpecialColor.RED + "Giriş hakkınız bitmiştir. Sistemden çıkılıyor..." + _15_4_SpecialColor.RESET);
-                            break;
-                        }
+
                     } else if (sayi == 0) {
                         System.out.println(_15_4_SpecialColor.BLUE + sayi + _15_4_SpecialColor.BLUE + " sayısının faktöriyeli = 1 ' dir.");
                         fakt = 1;
@@ -49,18 +45,20 @@ public class Week2_examples_4 {
                     }
 
                 } else if (veriGirisi.hasNextDouble()) {
-                    System.out.println(_15_4_SpecialColor.RED + " Ondalıklı bir sayı girdiniz. Lütfen pozitif tam sayı giriniz." + _15_4_SpecialColor.RESET);
+                    System.out.println(_15_4_SpecialColor.RED + " Ondalıklı bir sayı girdiniz. Kalan hakkınız :" + doubleRemainingRight + _15_4_SpecialColor.RESET);
                     doubleRemainingRight--;
                     if (doubleRemainingRight == 0) {
-                        System.out.println("Üç defa ondalıklı değer girdiğiniz için porgram sonlandı.");
+                        System.out.println(_15_4_SpecialColor.RED + " Üç defa ondalıklı değer girdiğiniz için program sonlandı." + _15_4_SpecialColor.RESET);
                         isActive = false;
                         System.exit(0);
                     }
                     veriGirisi.next();
                 } else {
                     System.out.println(_15_4_SpecialColor.RED + " Harf veya geçersiz bir karakter girdiniz." + _15_4_SpecialColor.RESET);
-                    break;
+                    // break;
+                    veriGirisi.next(); // Döngünün sonsuza kadar gitmesini engelliyor tekrar veri istiyor.
                 }
+
             } else {
                 System.out.println("Ondalıklı sayı giriş hakkınız kalmadı. Program sonlandırılıyor. (JVM tarafından.)");
                 System.exit(0);
