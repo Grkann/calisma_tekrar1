@@ -1,4 +1,4 @@
-package com.ozdmrgurkan_3_week_access;
+package com.ozdmrgurkan._3_week;
 
 import com.ozdmrgurkan._2_week._15_4_SpecialColor;
 

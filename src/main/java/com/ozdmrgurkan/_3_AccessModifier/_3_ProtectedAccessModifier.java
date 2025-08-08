@@ -1,7 +1,7 @@
 package com.ozdmrgurkan._3_AccessModifier;
 
 import com.ozdmrgurkan._2_week._15_4_SpecialColor;
-import com.ozdmrgurkan_3_week_access._1_PublicAccessModifier;
+import com.ozdmrgurkan._3_week._1_PublicAccessModifier;
 
 public class _3_ProtectedAccessModifier {
     public static void main(String[] args) {
