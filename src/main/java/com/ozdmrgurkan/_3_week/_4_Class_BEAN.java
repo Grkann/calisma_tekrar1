@@ -18,7 +18,7 @@ public class _4_Class_BEAN {
     public _4_Class_BEAN() {
         id = 0L;
         this.name = "Gurkan"; // İsim alanı
-        this.surname = "Ozdmir"; // Soyisim alanı
+        this.surname = "Ozdemir"; // Soyisim alanı
         this.createdDate = new Date(System.currentTimeMillis());
 
     }
@@ -56,7 +56,7 @@ public class _4_Class_BEAN {
                 '}';
     }
 
-   // Equals and HashCode
+    // Equals and HashCode
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -85,8 +85,19 @@ public class _4_Class_BEAN {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws IllegalAccessException {
+        //İsimde noktalama işareti vs varsa bunu kontrol etsin var ise eğer noktalamadan sonrasını silsin.
+        if (name != null && !name.isEmpty()) {
+            // İlk noktalama işaretinden sonrasını sil
+            name = name.replaceAll("[.!;+:%&/(},'].*", "");
+            // throw new IllegalAccessException("İsimde geçersiz karakter var.");
+        }
+        // İsmin ilk harfini büyük yapsın diğer harfleri kücültsün.
+        if (name != null && !name.isEmpty()) {
+            this.name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+        } else {
+            this.name = "";
+        }
     }
 
     public String getSurname() {
@@ -94,7 +105,14 @@ public class _4_Class_BEAN {
     }
 
     public void setSurname(String surname) {
-        this.surname = surname;
+        //Soyismin ilk 3 harfini büyük yapsın daha sonra kalanı maskelesin (*****).
+        if (surname != null && surname.length() >= 3) {
+            this.surname = surname.substring(0, 3).toUpperCase() + "*".repeat(surname.length() - 3);
+        } else if (surname != null) {
+            this.surname = surname.toUpperCase();
+        } else {
+            this.surname = "";
+        }
     }
 
     public Date getCreatedDate() {
@@ -106,16 +124,16 @@ public class _4_Class_BEAN {
     }
 
     //PSVM
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         _4_Class_BEAN bean1 = new _4_Class_BEAN();
         bean1.setId(1L);
-        bean1.setName("Gurkan");
-        bean1.setSurname("Ozdemir");
+        bean1.setName("gurkan,demir");
+        bean1.setSurname("Ozdemirrr");
         System.out.println(_15_4_SpecialColor.CYAN + bean1.getId() + " " + bean1.getName() + " " + bean1.getSurname() + " " + bean1.createdDate + _15_4_SpecialColor.RESET);
-        System.out.println(_15_4_SpecialColor.GREEN + bean1 + _15_4_SpecialColor.RESET);
+        // System.out.println(_15_4_SpecialColor.GREEN + bean1 + _15_4_SpecialColor.RESET);
 
-        _4_Class_BEAN bean2 = new _4_Class_BEAN(2L, "Gurkan", "Ozdemir");
-        System.out.println(_15_4_SpecialColor.RED + bean2 + _15_4_SpecialColor.RESET);
+        //  _4_Class_BEAN bean2 = new _4_Class_BEAN(2L, "Gurkan", "Ozdemir");
+        //  System.out.println(_15_4_SpecialColor.RED + bean2 + _15_4_SpecialColor.RESET);
 
     }
 }
