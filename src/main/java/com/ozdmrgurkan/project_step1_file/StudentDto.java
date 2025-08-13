@@ -16,7 +16,7 @@ import java.util.Date;
 @EqualsAndHashCode
 
 //Student
- public class Student implements Serializable {
+ public class StudentDto implements Serializable {
     //Serileştirme
     private static final long serialVersionUID = 556123124156L;
 
@@ -36,12 +36,12 @@ import java.util.Date;
 
 
     //Parametresiz constructor
-    public Student() {
+    public StudentDto() {
 
     }
 
     //Parametreli constructor
-    public Student(String name, Integer id, String surname, LocalDate birthDay, Double grade) {
+    public StudentDto(String name, Integer id, String surname, LocalDate birthDay, Double grade) {
         this.name = name;
         this.id = id;
         this.surname = surname;
