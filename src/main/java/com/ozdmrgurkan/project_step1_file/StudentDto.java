@@ -32,6 +32,7 @@ import java.util.Date;
     // static (Nesne boyunca 1 kere olusturulur.)
     static {
 
+
     }
 
 
@@ -41,9 +42,10 @@ import java.util.Date;
     }
 
     //Parametreli constructor
-    public StudentDto(String name, Integer id, String surname, LocalDate birthDay, Double grade) {
-        this.name = name;
+    public StudentDto(Integer id,String name, String surname, LocalDate birthDay, Double grade) {
+
         this.id = id;
+        this.name = name;
         this.surname = surname;
         this.birthDay = birthDay;
         this.grade = grade;
