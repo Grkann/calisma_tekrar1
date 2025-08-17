@@ -26,6 +26,7 @@ import java.util.Date;
     private Integer id;
     private String name;
     private String surname;
+    private EStudentType eStudentType; // Enum öğrenci seviyesi
     private Double midTerm; //Vize
     private Double finalTerm; //Final
     private Double resultTerm; // Sonuç: (%40 vize + %60Final)
@@ -47,7 +48,7 @@ import java.util.Date;
 
     //Parametreli constructor
 
-    public StudentDto(Integer id, String name, String surname, Double midTerm, Double finalTerm, LocalDate birthDay) {
+    public StudentDto(Integer id, String name, String surname, Double midTerm, Double finalTerm, LocalDate birthDay,EStudentType eStudentType ) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -56,6 +57,7 @@ import java.util.Date;
         this.birthDay = birthDay;
         this.resultTerm = calculateResult();
         this.dateOfBirth = new Date(System.currentTimeMillis());
+        this.eStudentType = eStudentType;
     }
 
 
@@ -142,5 +144,13 @@ import java.util.Date;
 
     public void setResultTerm(Double resultTerm) {
         this.resultTerm = resultTerm;
+    }
+
+    public EStudentType geteStudentType() {
+        return eStudentType;
+    }
+
+    public void setStudentType(EStudentType eStudentType) {
+        this.eStudentType = eStudentType;
     }
 } // end Student

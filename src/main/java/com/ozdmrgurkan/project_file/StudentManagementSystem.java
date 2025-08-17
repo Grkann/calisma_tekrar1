@@ -3,6 +3,7 @@ package com.ozdmrgurkan.project_file;
 import com.ozdmrgurkan._2_week._15_4_SpecialColor;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -72,7 +73,7 @@ public class StudentManagementSystem {
 
     // Öğrenci ekle
     public void add(StudentDto dto) {
-        studentDtoList.add(new StudentDto(++studentCounter, dto.getName(), dto.getSurname(), dto.getMidTerm(),dto.getFinalTerm(),dto.getBirthDay()));
+        studentDtoList.add(new StudentDto(++studentCounter, dto.getName(), dto.getSurname(), dto.getMidTerm(), dto.getFinalTerm(), dto.getBirthDay(),dto.geteStudentType()));
         System.out.println(_15_4_SpecialColor.GREEN + " Öğrenci eklendi." + _15_4_SpecialColor.RESET);
         // File ekle
         saveToFile();
@@ -96,20 +97,20 @@ public class StudentManagementSystem {
 
     // Öğrenci ara
     public void search(String name) {
-                 // Eğer öğrenci varsa true döndür
+        // Eğer öğrenci varsa true döndür
         /*studentDtoList.stream()
                 .filter(temp -> temp.getName().equalsIgnoreCase(name))
                 .forEach(System.out::println);*/
         boolean found =
                 studentDtoList
-                .stream()
-                .filter(temp -> temp.getName().equalsIgnoreCase(name))
-                .peek(System.out::println)  //Eğer ilgili data varsa yazdır.
-                .findAny() //Herhangi bir eşleşen öğrenci var mı yok mu ? kontrol et.
-                .isPresent();
+                        .stream()
+                        .filter(temp -> temp.getName().equalsIgnoreCase(name))
+                        .peek(System.out::println)  //Eğer ilgili data varsa yazdır.
+                        .findAny() //Herhangi bir eşleşen öğrenci var mı yok mu ? kontrol et.
+                        .isPresent();
 
-                //Öğrenci yoksa
-        if (!found){
+        //Öğrenci yoksa
+        if (!found) {
             throw new StudentNotFoundException(name + "isimli öğrenci bulunamadı.");
         }
 
@@ -122,8 +123,12 @@ public class StudentManagementSystem {
                 temp.setName(dto.getName());
                 temp.setSurname(dto.getSurname());
                 temp.setBirthDay(dto.getBirthDay());
+                temp.setMidTerm(dto.getMidTerm());
                 temp.setFinalTerm(dto.getFinalTerm());
-                System.out.println("Öğrenci güncellendi.");
+                temp.setStudentType(dto.geteStudentType());
+                //Güncellenmiş öğrenci bilgileri.
+                System.out.println(_15_4_SpecialColor.BLUE + temp + " Öğrenci bilgileri güncellendi." + _15_4_SpecialColor.RESET);
+                //Dosyaya kaydet.
                 saveToFile();
                 return;
 
@@ -135,9 +140,16 @@ public class StudentManagementSystem {
 
     // Öğrenci sil
     public void delete(int id) {
-        studentDtoList.removeIf(temp -> temp.getId() == id);
-        System.out.println(_15_4_SpecialColor.BLUE + "Öğrenci silindi." + _15_4_SpecialColor.RESET);
-        saveToFile();
+        // studentDtoList.removeIf(temp -> temp.getId() == id);
+        boolean removed = studentDtoList.removeIf(temp -> temp.getId() == id);
+        if (removed) {
+            System.out.println(_15_4_SpecialColor.BLUE + "Öğrenci silindi." + _15_4_SpecialColor.RESET);
+            //Silinen öğrenciyi dosyaya kaydet.
+            saveToFile();
+        } else {
+            System.out.println(_15_4_SpecialColor.RED + "Öğrenci silinmedi." + _15_4_SpecialColor.RESET);
+        }
+
     }
 
 
@@ -146,6 +158,28 @@ public class StudentManagementSystem {
     // Öğrenci not ortalaması hesapla
     // En yüksek veya en düşük not alan öğrenci
     // Öğrenci sıralaması (Doğum günü)
+
+
+
+//Enum Öğrenci Türü Method
+    private EStudentType studentTypeMethod(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Öğrenci Seviyesini Seçiniz: \n 1-Lisans \n 2- Yüksek Lisans \n 3-Doktora");
+        int typeChoice = scanner.nextInt();
+        EStudentType switchCaseStudent = switch (typeChoice){
+            case 1 -> EStudentType.UNDERGRADUATE;
+            case 2 -> EStudentType.GRADUATE;
+            case 3 -> EStudentType.PHD;
+            default -> EStudentType.OTHER;
+        };
+
+        return switchCaseStudent;
+    }
+
+
+
+
+
 
     /// ///////////////////////////////////////////////////////////
     //  Console Seçim (Öğrenci ekle)
@@ -156,51 +190,103 @@ public class StudentManagementSystem {
 //Sonsuz while
 
         while (true) {
-            System.out.println("\n 1.Öğrenci Ekle");
-            System.out.println("\n 2.Öğrenci Listele");
-            System.out.println("\n 3.Öğrenci Ara");
-            System.out.println("\n 4.Öğrenci Güncelle");
-            System.out.println("\n 5.Öğrenci Sil");
-            System.out.println("\n 6.Öğrenci Toplam Sayısı");
-            System.out.println("\n 7.Öğrenci Rastgele");
-            System.out.println("\n 8.Öğrenci Not Hesapla");
-            System.out.println("\n 9.Öğrenci En Yüksek ,En Düsük Notları Göster");
-            System.out.println("\n 10.Öğrenci Sıralaması Dogum Gününe Göre Göster");
-            System.out.println("\n 11.Çıkış ");
-            System.out.println("\n Lütfen seçiminizi yapınız.");
+            System.out.println(_15_4_SpecialColor.YELLOW + " 1.Öğrenci Ekle" );
+            System.out.println(" 2.Öğrenci Listele");
+            System.out.println(" 3.Öğrenci Ara");
+            System.out.println(" 4.Öğrenci Güncelle");
+            System.out.println(" 5.Öğrenci Sil");
+            System.out.println(" 6.Öğrenci Toplam Sayısı");
+            System.out.println(" 7.Öğrenci Rastgele");
+            System.out.println(" 8.Öğrenci Not Hesapla");
+            System.out.println(" 9.Öğrenci En Yüksek ,En Düsük Notları Göster");
+            System.out.println(" 10.Öğrenci Sıralaması Dogum Gününe Göre Göster");
+            System.out.println(" 11.Çıkış " +_15_4_SpecialColor.RESET);
+            System.out.println(_15_4_SpecialColor.CYAN + " Lütfen seçiminizi yapınız." + _15_4_SpecialColor.RESET);
 
+            // Seçim yap.
             int chooise = scanner.nextInt();
             scanner.nextLine(); //Durma yerimiz
-            StudentDto studentDto = new StudentDto();
-            String name, surname;
-            String birthDay;
-            Double grade;
 
+            //Karar bölümü
             switch (chooise) {
-                case 1:
+                case 1: // Öğrenci ekle
                     System.out.println("Öğrenci Adı: ");
-                    name = scanner.nextLine();
+                    String name = scanner.nextLine();
+
                     System.out.println("Öğrenci Soyadı:");
-                    surname = scanner.nextLine();
-                    System.out.println("Doğum Tarihi:");
-                    birthDay = scanner.nextLine().toString();
-                    System.out.println("Öğrenci Puanı");
-                    grade = scanner.nextDouble();
+                    String surname = scanner.nextLine();
 
-                    studentDto.setId(studentCounter);
-                    studentDto.setName(name);
-                    studentDto.setSurname(surname);
-                    studentDto.setDateOfBirth(new Date(System.currentTimeMillis()));
-                    // studentDto.setBirthDay(birthDay);
-                    studentDto.setFinalTerm(grade);
-                    studentManagementSystem.add(studentDto);
-break;
+                    System.out.println("Doğum Tarihi: YYYY-MM-DD");
+                    LocalDate birthDay = LocalDate.parse(scanner.nextLine());
 
-                case 2:
+                    System.out.println("Öğrenci Vize Puanı");
+                    double midTerm = scanner.nextDouble();
+
+                    System.out.println("Öğrenci Final Puanı");
+                    double finalTerm = scanner.nextDouble();
+
+                    studentManagementSystem.add(new StudentDto(++studentCounter, name, surname, midTerm, finalTerm, birthDay,studentTypeMethod()));
+                    break;
+
+                case 2: // Listelemek
                     studentManagementSystem.list();
                     break;
-            }
 
+                case 3: // Öğrenci ara
+                    studentManagementSystem.list();
+                    System.out.println(_15_4_SpecialColor.BLUE + "Aranacak öğrenci adını yazınız: " + _15_4_SpecialColor.RESET);
+                    String searchName = scanner.nextLine();
+                    studentManagementSystem.search(searchName);
+                    break;
+
+                case 4: // Öğrenci güncelle
+
+                    System.out.println("Güncelleme Yapılacak Öğrenci ID'si giriniz : ");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();  // Eğer int sonrası String gelecekse yazmalıyız.
+
+                    System.out.println("Yeni Öğrenci Adı:");
+                    String nameUpdate = scanner.nextLine();
+
+                    System.out.println("Yeni Öğrenci Soyadı:");
+                    String surnameUpdate = scanner.nextLine();
+
+                    System.out.println("Doğum Tarihi: YYYY-MM-DD");
+                    LocalDate birthDayUpdate = LocalDate.parse(scanner.nextLine());
+
+                    System.out.println("Öğrenci Vize Puanı");
+                    double midTermUpdate = scanner.nextDouble();
+
+                    System.out.println("Öğrenci Final Puanı");
+                    double finalTermUpdate = scanner.nextDouble();
+
+                    StudentDto studentDtoUpdate = StudentDto.builder()
+                            .name(nameUpdate)
+                            .surname(surnameUpdate)
+                            .midTerm(midTermUpdate)
+                            .finalTerm(finalTermUpdate)
+                            .birthDay(birthDayUpdate)
+                            .eStudentType(studentTypeMethod())
+                            .build();
+
+                    try {
+                        studentManagementSystem.update(id, studentDtoUpdate);
+                    } catch (StudentNotFoundException e) {
+                        System.out.println(_15_4_SpecialColor.RED + e.getMessage());
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 5: // Öğrenci Sil.
+                    studentManagementSystem.list();
+                    System.out.println("Silinecek öğrenci ID'si giriniz : ");
+                    int deleteId = scanner.nextInt();
+                    scanner.nextLine();
+                    studentManagementSystem.delete(deleteId);
+                    break;
+
+                 //
+            }
 
 
         }
