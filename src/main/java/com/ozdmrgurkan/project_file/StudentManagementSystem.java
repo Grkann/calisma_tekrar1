@@ -1,11 +1,10 @@
 package com.ozdmrgurkan.project_file;
 
-import com.ozdmrgurkan._2_week._15_4_SpecialColor;
+import com.ozdmrgurkan.tutorials._2_week._15_4_SpecialColor;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 // Öğrenci Yönetim Sistemi
@@ -24,6 +23,8 @@ public class StudentManagementSystem {
 
     //Parametresiz Constructor
     public StudentManagementSystem() {
+        // Eğer students.txt yoksa otomatik oluştur.
+        createFileIfNotExists();
         //Program başlarken Öğrenci listesini hemen yüklesin.
         loadStudentsListFromFile();
     }
@@ -36,6 +37,25 @@ public class StudentManagementSystem {
     /// ///////////////////////////////////////////////////////////
 
     //  FileIO create
+
+    // File If Not Exists (Eğer students.txt yoksa oluştur.)
+    private void createFileIfNotExists() {
+        //students.txt
+        File file = new File(FILE_NAME);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+                System.out.println(_15_4_SpecialColor.YELLOW + FILE_NAME + " adında doysa olusturuldu." + _15_4_SpecialColor.RESET);
+
+            } catch (IOException ioException) {
+                System.out.println(_15_4_SpecialColor.CYAN + "Dosya olusturulurken hata olustu." + _15_4_SpecialColor.RESET);
+                ioException.printStackTrace();
+            }
+
+        }
+    }
+
+
     //  File Create
     private void saveToFile() {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
@@ -73,7 +93,7 @@ public class StudentManagementSystem {
 
     // Öğrenci ekle
     public void add(StudentDto dto) {
-        studentDtoList.add(new StudentDto(++studentCounter, dto.getName(), dto.getSurname(), dto.getMidTerm(), dto.getFinalTerm(), dto.getBirthDay(),dto.geteStudentType()));
+        studentDtoList.add(new StudentDto(++studentCounter, dto.getName(), dto.getSurname(), dto.getMidTerm(), dto.getFinalTerm(), dto.getBirthDay(), dto.geteStudentType()));
         System.out.println(_15_4_SpecialColor.GREEN + " Öğrenci eklendi." + _15_4_SpecialColor.RESET);
         // File ekle
         saveToFile();
@@ -160,13 +180,12 @@ public class StudentManagementSystem {
     // Öğrenci sıralaması (Doğum günü)
 
 
-
 //Enum Öğrenci Türü Method
-    private EStudentType studentTypeMethod(){
+    private EStudentType studentTypeMethod() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Öğrenci Seviyesini Seçiniz: \n 1-Lisans \n 2- Yüksek Lisans \n 3-Doktora");
         int typeChoice = scanner.nextInt();
-        EStudentType switchCaseStudent = switch (typeChoice){
+        EStudentType switchCaseStudent = switch (typeChoice) {
             case 1 -> EStudentType.UNDERGRADUATE;
             case 2 -> EStudentType.GRADUATE;
             case 3 -> EStudentType.PHD;
@@ -175,10 +194,6 @@ public class StudentManagementSystem {
 
         return switchCaseStudent;
     }
-
-
-
-
 
 
     /// ///////////////////////////////////////////////////////////
@@ -190,7 +205,7 @@ public class StudentManagementSystem {
 //Sonsuz while
 
         while (true) {
-            System.out.println(_15_4_SpecialColor.YELLOW + " 1.Öğrenci Ekle" );
+            System.out.println(_15_4_SpecialColor.YELLOW + " 1.Öğrenci Ekle");
             System.out.println(" 2.Öğrenci Listele");
             System.out.println(" 3.Öğrenci Ara");
             System.out.println(" 4.Öğrenci Güncelle");
@@ -200,7 +215,7 @@ public class StudentManagementSystem {
             System.out.println(" 8.Öğrenci Not Hesapla");
             System.out.println(" 9.Öğrenci En Yüksek ,En Düsük Notları Göster");
             System.out.println(" 10.Öğrenci Sıralaması Dogum Gününe Göre Göster");
-            System.out.println(" 11.Çıkış " +_15_4_SpecialColor.RESET);
+            System.out.println(" 11.Çıkış " + _15_4_SpecialColor.RESET);
             System.out.println(_15_4_SpecialColor.CYAN + " Lütfen seçiminizi yapınız." + _15_4_SpecialColor.RESET);
 
             // Seçim yap.
@@ -225,7 +240,7 @@ public class StudentManagementSystem {
                     System.out.println("Öğrenci Final Puanı");
                     double finalTerm = scanner.nextDouble();
 
-                    studentManagementSystem.add(new StudentDto(++studentCounter, name, surname, midTerm, finalTerm, birthDay,studentTypeMethod()));
+                    studentManagementSystem.add(new StudentDto(++studentCounter, name, surname, midTerm, finalTerm, birthDay, studentTypeMethod()));
                     break;
 
                 case 2: // Listelemek
@@ -285,7 +300,7 @@ public class StudentManagementSystem {
                     studentManagementSystem.delete(deleteId);
                     break;
 
-                 //
+                //
             }
 
 

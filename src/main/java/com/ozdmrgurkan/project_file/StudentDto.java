@@ -1,6 +1,6 @@
 package com.ozdmrgurkan.project_file;
 
-import com.ozdmrgurkan._2_week._15_4_SpecialColor;
+import com.ozdmrgurkan.tutorials._2_week._15_4_SpecialColor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
