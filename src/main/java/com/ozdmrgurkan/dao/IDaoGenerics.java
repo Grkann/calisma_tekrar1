@@ -7,13 +7,12 @@ import java.util.ArrayList;
 public interface IDaoGenerics<T> {
 
     // CRUD
-
     // CREATE
     T create(T t);
 
-    // FIND BY NAME
+    // FIND BY NAME,ID
     T findByName(String name);
-
+    T findById(int id);
     // LIST
     ArrayList<T> list();
 
@@ -23,11 +22,10 @@ public interface IDaoGenerics<T> {
     // DELETE
     T delete(int id);
 
-    //CHOOISE
+    // CHOOISE
     void chooise();
 
-
-    // BODY Method
+    // DATABASE CONNECTION
     default Connection getInterfaceConnection() {
         return null;
     }
