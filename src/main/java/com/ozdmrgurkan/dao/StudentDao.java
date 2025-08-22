@@ -1,5 +1,8 @@
-package com.ozdmrgurkan.project_file;
+package com.ozdmrgurkan.dao;
 
+import com.ozdmrgurkan.project_file.EStudentType;
+import com.ozdmrgurkan.project_file.StudentDto;
+import com.ozdmrgurkan.project_file.StudentNotFoundException;
 import com.ozdmrgurkan.tutorials._2_week._15_4_SpecialColor;
 
 import java.io.*;
@@ -8,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // Öğrenci Yönetim Sistemi
-public class StudentManagementSystem {
+public class StudentDao {
 
     //Field
     private ArrayList<StudentDto> studentDtoList = new ArrayList<>();
@@ -22,7 +25,7 @@ public class StudentManagementSystem {
     }
 
     //Parametresiz Constructor
-    public StudentManagementSystem() {
+    public StudentDao() {
         // Eğer students.txt yoksa otomatik oluştur.
         createFileIfNotExists();
         //Program başlarken Öğrenci listesini hemen yüklesin.
@@ -54,7 +57,7 @@ public class StudentManagementSystem {
 
         }
     }
-
+ 
 
     //  File Create
     private void saveToFile() {
@@ -200,7 +203,7 @@ public class StudentManagementSystem {
     //  Console Seçim (Öğrenci ekle)
     public void chooise() {
         Scanner scanner = new Scanner(System.in);
-        StudentManagementSystem studentManagementSystem = new StudentManagementSystem();
+        StudentDao studentManagementSystem = new StudentDao();
 
 //Sonsuz while
 

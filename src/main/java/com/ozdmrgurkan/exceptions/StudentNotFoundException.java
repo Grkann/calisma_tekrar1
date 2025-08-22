@@ -1,4 +1,4 @@
-package com.ozdmrgurkan.project_file;
+package com.ozdmrgurkan.exceptions;
 
 //Öğrenci bulunamazsa fırlatılacak Özel Exception
 public class StudentNotFoundException extends RuntimeException{

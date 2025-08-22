@@ -1,5 +1,6 @@
-package com.ozdmrgurkan.project_file;
+package com.ozdmrgurkan.dto;
 
+import com.ozdmrgurkan.project_file.EStudentType;
 import com.ozdmrgurkan.tutorials._2_week._15_4_SpecialColor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,7 +49,7 @@ import java.util.Date;
 
     //Parametreli constructor
 
-    public StudentDto(Integer id, String name, String surname, Double midTerm, Double finalTerm, LocalDate birthDay,EStudentType eStudentType ) {
+    public StudentDto(Integer id, String name, String surname, Double midTerm, Double finalTerm, LocalDate birthDay, EStudentType eStudentType ) {
         this.id = id;
         this.name = name;
         this.surname = surname;

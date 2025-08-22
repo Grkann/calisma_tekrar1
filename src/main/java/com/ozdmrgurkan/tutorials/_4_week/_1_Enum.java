@@ -2,7 +2,7 @@ package com.ozdmrgurkan.tutorials._4_week;
 
 import com.ozdmrgurkan.project_file.EStudentType;
 
-public class Week4_01_Enum
+public class _1_Enum
 {
     public static void main(String[] args) {
         EStudentType eStudentType = EStudentType.GRADUATE;
