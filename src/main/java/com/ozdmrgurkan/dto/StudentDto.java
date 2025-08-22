@@ -1,6 +1,6 @@
 package com.ozdmrgurkan.dto;
 
-import com.ozdmrgurkan.project_file.EStudentType;
+
 import com.ozdmrgurkan.tutorials._2_week._15_4_SpecialColor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

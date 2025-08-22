@@ -1,4 +1,4 @@
-package com.ozdmrgurkan.tutorials._4_week;
+/* package com.ozdmrgurkan.tutorials._4_week;
 
 import com.ozdmrgurkan.project_file.EStudentType;
 
@@ -11,3 +11,4 @@ public class _1_Enum
         System.out.println(eStudentType.ordinal());
     }
 }
+*/
